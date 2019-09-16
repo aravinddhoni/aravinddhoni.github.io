@@ -1,92 +1,47 @@
-<!DOCTYPE html> 
-<html> 
-<style> 
-	/*set border to the form*/ 
-	
-	form { 
-		border: 1px solid #f1f1f1; 
-	} 
-	/*assign full width inputs*/ 
-	
-	input[type=text], 
-	input[type=password] { 
-		width: 50%; 
-		padding: 8px 10px; 
-		margin: 4px 0; 
-		display: inline-block; 
-		border: 1px solid #ccc; 
-		box-sizing: border-box; 
-	} 
-	/*set a style for the buttons*/ 
-	
-	button { 
-		background-color: #4CAF50; 
-		color: red; 
-		padding: 8px 10px; 
-		margin: 4px 0; 
-		border: none; 
-		cursor: pointer; 
-		width: 50%; 
-	} 
-	/* set a hover effect for the button*/ 
-	
-	button:hover { 
-		opacity: 0.8; 
-	} 
-	/*set extra style for the cancel button*/ 
-	
-	.cancelbtn { 
-		width: auto; 
-		padding: 4px 10px; 
-		background-color: #f44336; 
-	} 
-	
-	/*set padding to the container*/ 
-	
-	.container { 
-		padding: 8px; 
-	} 
-	/*set the forgot password text*/ 
-	
-	span.psw { 
-		float: right; 
-		padding-top: 8px; 
-	} 
-	/*set styles for span and cancel button on small screens*/ 
-	
-	@media screen and (max-width: 150px) { 
-		span.psw { 
-			display: block; 
-			float: none; 
-		} 
-		.cancelbtn { 
-			width: 50%; 
-		} 
-	} 
-</style> 
+<html>
+<head>
+<title>Login Page</title>
+</head>
+<body>
+<form name="loginForm" method="post" action="login.php">
+<table width="20%" bgcolor="0099CC" align="center">
 
-<body> 
+<tr>
+<td colspan=2><center><font size=4><b>HTML Login Page</b></font></center></td>
+</tr>
 
-	<h2>Login Form</h2> 
-	<!--Step 1 : Adding HTML-->
-	<form action="/action_page.php"> 
-		<div class="container"> 
-			<label><b>Username</b></label> 
-			<input type="text" placeholder="Enter Username" name="uname" required> 
+<tr>
+<td>Username:</td>
+<td><input type="text" size=25 name="userid"></td>
+</tr>
 
-			<label><b>Password</b></label> 
-			<input type="password" placeholder="Enter Password" name="psw" required> 
+<tr>
+<td>Password:</td>
+<td><input type="Password" size=25 name="pwd"></td>
+</tr>
 
-			<button type="submit">Login</button> 
-			<input type="checkbox" checked="checked"> Remember me 
-		</div> 
+<tr>
+<td ><input type="Reset"></td>
+<td><input type="submit" onclick="return check(this.form)" value="Login"></td>
+</tr>
 
-		<div class="container" style="background-color:#f1f1f1"> 
-			<button type="button" class="cancelbtn">Cancel</button> 
-			<span class="psw">Forgot <a href="#">password?</a></span> 
-		</div> 
-	</form> 
+</table>
+</form>
+<script language="javascript">
+function check(form)
+{
 
-</body> 
+if(form.userid.value == "Roseindia" && form.pwd.value == "Roseindia")
+{
+	return true;
+}
+else
+{
+	alert("Error Password or Username")
+	return false;
+}
+}
+</script>
 
-</html> 
+</body>
+</html>
